@@ -1,0 +1,116 @@
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+  color: #eaf6ff2b;
+}
+
+/* ===== LAYOUT ===== */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #9ee7ff;
+}
+
+/* ===== LANG SWITCH ===== */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #eaf6ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.lang-switch button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.lang-switch button.active {
+  background: #9ee7ff;
+  color: #0f2027;
+  border-color: transparent;
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 28px;
+}
+
+.nav button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #1b2a33;
+  padding: 10px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size: 14px;
+}
+
+.nav button:hover {
+  background: rgba(158, 231, 255, 0.25);
+  transform: translateY(-1px);
+  color: #0f2027;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  flex: 1;
+  padding: 28px;
+}
+
+/* ===== SNOW ANIMATION (optional) ===== */
+@keyframes snow {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 500px 1000px, 400px 400px, 300px 300px; }
+}
+
+.app-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 80% 40%, white, transparent),
+    radial-gradient(1.5px 1.5px at 50% 70%, white, transparent);
+  animation: snow 60s linear infinite;
+  opacity: 0.5;
+}

@@ -1,0 +1,23 @@
+.tasks {
+    display: flex;
+    flex-direction: row; /* карточки идут слева направо */
+    flex-wrap: wrap;     /* ❗️ если не помещаются — переносятся на новую строку */
+    gap: 20px;           /* расстояние между карточками */
+    justify-content: center; /* выравнивание по левому краю */
+    margin: 10px;
+}
+
+.search-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.search-box input {
+  width: 300px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}

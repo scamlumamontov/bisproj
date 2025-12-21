@@ -1,0 +1,73 @@
+<div class="chat-container">
+
+  <!-- ЛЕВАЯ КОЛОНКА -->
+  <div class="dialogs-list">
+    <h3>
+      {{(this.lang == "ru" || this.lang == null) ? "Диалоги" : "Dialogues"}}
+    </h3>
+
+    <div *ngIf="dialogs.length; else noDialogs">
+      <div
+        *ngFor="let d of dialogs"
+        class="dialog-item"
+        (click)="selectReceiver(d)"
+        [class.active]="receiverId === d.id"
+      >
+        <div class="avatar">
+          <img [src]="d.link || 'assets/no-avatar.png'" alt="avatar">
+        </div>
+
+        <div class="info">
+          <h4>{{ d.nickname }}</h4>
+          <p>ID: {{ d.id }}</p>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noDialogs>
+      <p class="muted">
+        {{(this.lang == "ru" || this.lang == null) ? "Пока нет диалогов" : "No dialogues yet"}}
+      </p>
+    </ng-template>
+  </div>
+
+  <!-- ПРАВАЯ ЧАСТЬ -->
+  <div class="messages-area" *ngIf="receiverId">
+    <div class="messages-header">
+      {{ receiverName }}
+    </div>
+
+    <div *ngIf="blockWarning" class="block-warning">
+      {{ blockWarning }}
+    </div>
+
+    <div class="messages-box">
+      <div
+        *ngFor="let msg of messages"
+        class="message"
+        [class.me]="msg.user1.id === userId"
+      >
+        <div class="bubble">
+          {{ msg.content }}
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <input [(ngModel)]="newMessage"
+        type="text"
+        [placeholder] = 
+        "(lang == 'ru' || lang == null)
+            ? 'Введите сообщение'
+            : 'Enter your message'"
+        (keyup.enter)="sendMessage()"
+      />
+
+      <button (click)="sendMessage()">
+        ➤
+      </button>
+    </div>
+
+  </div>
+
+</div>

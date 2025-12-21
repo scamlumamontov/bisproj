@@ -1,0 +1,50 @@
+.task-card {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.input {
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.cancel {
+  background: #aaa;
+  color: #fff;
+}

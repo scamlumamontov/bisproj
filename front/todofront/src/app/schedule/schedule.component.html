@@ -1,0 +1,35 @@
+<div class="schedule-container">
+  <h2>
+    {{ (lang == "ru" || lang == null) ? "Расписание занятий" : "Schedule" }}
+  </h2>
+
+  <div class="schedule-grid" *ngIf="schedule">
+    <!-- Заголовок: дни недели -->
+    <div class="header time-col" >
+      {{ (lang == "ru" || lang == null) ? "Время" : "Time" }}
+    </div>
+    <div
+      class="header"
+      *ngFor="let day of getDays()"
+    >
+    {{ getDayLabel(day) }}
+    </div>
+
+    <!-- Строки расписания -->
+    <ng-container *ngFor="let time of getTimes()">
+      <div class="time-col">{{ formatTime(time) }}</div>
+
+      <div
+        class="cell"
+        *ngFor="let day of getDays()"
+      >
+        <div *ngIf="schedule[day][time]" class="lesson-box">
+          <strong>{{ schedule[day][time].name }}</strong><br />
+          <small>
+            {{ (lang == "ru" || lang == null) ? "Кабинет" : "Room" }} {{ schedule[day][time].room }}</small><br />
+          <small>{{ schedule[day][time].teacher }}</small>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

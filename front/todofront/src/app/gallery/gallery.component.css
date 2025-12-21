@@ -1,0 +1,71 @@
+.btn-container {
+  display: flex;
+  justify-content: center; /* центрируем */
+  gap: 20px;               /* расстояние между кнопками */
+  margin: 20px 0;
+}
+
+
+.cool-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cool-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.gallery-btn {
+  background: #007bff;
+  color: white;
+}
+
+.gallery-btn:hover {
+  background: #0069d9;
+}
+
+.fav-btn {
+  background: #ff4757;
+  color: white;
+}
+
+.fav-btn:hover {
+  background: #e84118;
+}
+
+.upload-btn {
+  background-color: #28a745;   /* зелёный */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.upload-btn:hover {
+  background-color: #218838;   /* темнее при наведении */
+  transform: scale(1.05);
+}
+
+.upload-btn:active {
+  background-color: #1e7e34;   /* ещё темнее при клике */
+  transform: scale(0.98);
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;     
+    gap: 20px;           
+    justify-content: flex-start; 
+    margin: 10px;
+}

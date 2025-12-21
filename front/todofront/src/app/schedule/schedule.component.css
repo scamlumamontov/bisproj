@@ -1,0 +1,67 @@
+.schedule-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: bold;
+  border-right: 1px solid #fff;
+}
+
+.time-col {
+  background: #f5f5f5;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 0;
+  border-right: 1px solid #ddd;
+  color: #000;              /* ← Сделали время черным */
+}
+
+.cell {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson-box {
+  background: #e9f4ff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 85%;
+  transition: 0.2s ease;
+}
+
+.lesson-box:hover {
+  background: #d6ecff;
+  transform: translateY(-2px);
+}
+
+small {
+  color: #555;
+  font-size: 13px;
+}
