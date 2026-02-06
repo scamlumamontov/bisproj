@@ -1,5 +1,5 @@
 A simple messenger web application built with Angular frontend and Django REST Framework backend.
-The app uses JWT authentication (SimpleJWT) and role-based access (RBA).
+The app uses JWT authentication (SimpleJWT) with interceptor and role-based access (RBA).
 Messages are loaded via regular HTTP requests (no real-time / no WebSockets).
 
 Features:
@@ -14,7 +14,5 @@ Due to file loss, the diagram source files are no longer available in this repos
 Both diagrams can be found in the project presentation, slide 7, which is included in the repository.
 
 They describe:
-
-the main entities and their relationships (ER diagram)
-
-the main user interactions with the system (Use Case diagram)
+- the main entities and their relationships (ER diagram)
+- the main user interactions with the system (Use Case diagram)
